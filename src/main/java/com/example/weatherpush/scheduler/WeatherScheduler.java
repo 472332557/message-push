@@ -25,7 +25,7 @@ public class WeatherScheduler {
      * cron表达式：0 30 7 * * ?
      * 秒 分 时 日 月 周
      */
-    @Scheduled(cron = "0 */5 * * * ?")
+    @Scheduled(cron = "0 30 7 * * ?")
     public void scheduledWeatherPush() {
         logger.info("开始执行定时天气推送任务...");
 

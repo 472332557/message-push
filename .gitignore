@@ -14,3 +14,10 @@ build/
 Thumbs.db
 # 日志文件
 *.log
+
+target/
+out
+*.log
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
