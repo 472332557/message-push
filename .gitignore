@@ -1,0 +1,16 @@
+# 编辑器配置
+.idea/
+.vscode/
+.lingma/
+*.iml
+# 依赖包目录
+node_modules/
+vendor/
+# 构建产物
+dist/
+build/
+# 系统文件
+.DS_Store
+Thumbs.db
+# 日志文件
+*.log
