@@ -21,3 +21,9 @@ out
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+!**/target/
+!**/node_modules/
+!**/vendor/
+!**/dist/
+!**/build/
+!**/out/

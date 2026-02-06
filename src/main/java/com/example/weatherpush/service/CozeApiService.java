@@ -64,4 +64,39 @@ public class CozeApiService {
             return "Error: " + e.getMessage();
         }
     }
+
+    public String callNewsWorkflow() {
+        try {
+            // 构建请求头
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.setBearerAuth(TOKEN);
+
+            // 构建请求体
+            Map<String, Object> requestBody = new HashMap<>();
+            requestBody.put("workflow_id", "7603669686416441384");
+
+            Map<String, Object> parameters = new HashMap<>();
+            requestBody.put("parameters", parameters);
+
+            HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
+
+            logger.info("Calling Coze API for news workflow");
+
+            // 发送POST请求
+            ResponseEntity<String> response = restTemplate.postForEntity(
+                    COZE_API_URL,
+                    requestEntity,
+                    String.class);
+
+            logger.info("Coze News API response status: {}", response.getStatusCode());
+            logger.info("Coze News API response body: {}", response.getBody());
+
+            return response.getBody();
+
+        } catch (Exception e) {
+            logger.error("Error calling Coze News API", e);
+            return "Error: " + e.getMessage();
+        }
+    }
 }

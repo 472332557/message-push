@@ -48,4 +48,24 @@ public class WeatherScheduler {
     public void scheduledTestTask() {
         logger.info("每天7:35执行的测试任务 - 当前时间: {}", System.currentTimeMillis());
     }
+
+    /**
+     * 每天早上8:00执行的新闻推送任务
+     * cron表达式：0 0 8 * * ?
+     * 秒 分 时 日 月 周
+     */
+    @Scheduled(cron = "0 0 8 * * ?")
+    public void scheduledNewsPush() {
+        logger.info("开始执行定时新闻推送任务...");
+
+        try {
+            // 调用Coze API获取新闻
+            String result = cozeApiService.callNewsWorkflow();
+
+            logger.info("定时任务新闻推送API调用结果: {}", result);
+
+        } catch (Exception e) {
+            logger.error("定时新闻推送任务执行失败", e);
+        }
+    }
 }
