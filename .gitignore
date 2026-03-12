@@ -2,6 +2,7 @@
 .idea/
 .vscode/
 .lingma/
+.qoder/
 *.iml
 # 依赖包目录
 node_modules/

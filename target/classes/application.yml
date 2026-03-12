@@ -1,5 +1,20 @@
 server:
-  port: 8088
+  port: ${SERVER_PORT:8088}
+
+coze:
+  api:
+    url: https://api.coze.cn/v1/workflow/stream_run
+    token: ${COZE_TOKEN:pat_o2zmctmRKqtxOMBlVacJF07TMvvqGfzb90zt2JEfvVGxE7j3nChDHRJQxOVU2f71}
+    workflow-id:
+      weather: ${WEATHER_WORKFLOW_ID:7602641055988891686}
+      news: ${NEWS_WORKFLOW_ID:7603669686416441384}
+
+# 定时任务 cron 表达式配置
+scheduler:
+  cron:
+    weather: 0 30 7 * * ?    # 每天早上 7:30
+    news: 0 0 8 * * ?        # 每天早上 8:00
+    test: 0 */10 * * * ?     # 每 10 分钟
 
 logging:
   level:
