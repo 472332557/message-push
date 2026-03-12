@@ -21,4 +21,5 @@ public class WeatherPushApplication {
     public static void main(String[] args) {
         SpringApplication.run(WeatherPushApplication.class, args);
     }
+
 }
