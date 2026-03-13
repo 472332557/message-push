@@ -3,6 +3,7 @@
 .vscode/
 .lingma/
 .qoder/
+.claude/
 *.iml
 # 依赖包目录
 node_modules/

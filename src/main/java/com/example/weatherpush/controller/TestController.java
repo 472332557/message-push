@@ -41,4 +41,13 @@ public class TestController {
     public String health() {
         return "Application is running!";
     }
+
+    /**
+     * 新闻推送接口
+     * @return Coze API 新闻调用结果
+     */
+    @GetMapping("/news")
+    public String newsPush() {
+        return cozeApiService.callNewsWorkflow();
+    }
 }
