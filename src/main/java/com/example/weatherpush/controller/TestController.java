@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 测试控制器
- * 作者：liangzc
- * 日期：2026 年 03 月 12 日
+ * <p>提供 Coze API 测试和健康检查接口</p>
+ *
+ * @author liangzc
+ * @date 2026-03-13
  */
 
 @RestController
@@ -18,15 +20,21 @@ public class TestController {
 
     private final CozeApiService cozeApiService;
 
-    // 构造器注入
+    /**
+     * 构造器注入 CozeApiService
+     *
+     * @param cozeApiService Coze API 服务实例
+     */
     @Autowired
     public TestController(CozeApiService cozeApiService) {
         this.cozeApiService = cozeApiService;
     }
 
     /**
-     * 测试 Coze API 接口
-     * @return Coze API 调用结果
+     * 测试 Coze 天气工作流 API
+     * <p>调用深圳地区的天气工作流并返回结果</p>
+     *
+     * @return Coze API 调用返回的天气数据
      */
     @GetMapping("/test-coze")
     public String testCozeApi() {
@@ -34,8 +42,10 @@ public class TestController {
     }
 
     /**
-     * 健康检查接口
-     * @return 应用运行状态
+     * 应用健康检查接口
+     * <p>用于监控服务运行状态</p>
+     *
+     * @return 应用运行状态信息
      */
     @GetMapping("/health")
     public String health() {
@@ -44,7 +54,9 @@ public class TestController {
 
     /**
      * 新闻推送接口
-     * @return Coze API 新闻调用结果
+     * <p>调用 Coze 新闻工作流获取今日新闻资讯</p>
+     *
+     * @return Coze API 调用返回的新闻数据
      */
     @GetMapping("/news")
     public String newsPush() {
